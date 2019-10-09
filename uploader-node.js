@@ -6,7 +6,6 @@ var fs = require('fs'),
 module.exports = flow = function(temporaryFolder) {
   var $ = this;
   $.temporaryFolder = temporaryFolder;
-  console.log(temporaryFolder);
   $.maxFileSize = null;
   $.fileParameterName = 'data';
 
@@ -99,7 +98,6 @@ module.exports = flow = function(temporaryFolder) {
     var identifier = cleanIdentifier(fields['identifier']);
     var filename = fields['filename'];
 
-    console.log(files);
     if (!files[$.fileParameterName] || !files[$.fileParameterName].size) {
       callback('invalid_uploader_request', null, null, null);
       return;
